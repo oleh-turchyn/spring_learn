@@ -9,6 +9,11 @@
 
 
         <bean id="musicBean"
-              class="com.turchyn.spring.RockMusic">
+              class="com.turchyn.spring.ClassicalMusic">
         </bean>
+        <bean id="musicPlayer"
+              class="com.turchyn.spring.MusicPlayer">
+                <constructor-arg ref="musicBean"/>
+        </bean>
+
 </beans>
