@@ -1,4 +1,9 @@
 package com.turchyn.spring;
 
-public class ClassicalMusic {
+public class ClassicalMusic implements Music {
+
+    @Override
+    public String getSong() {
+        return "Classical";
+    }
 }
