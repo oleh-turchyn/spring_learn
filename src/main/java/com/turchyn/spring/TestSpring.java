@@ -5,7 +5,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class TestSpring {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
-          "applicationContext.xml"
+                "applicationContext.xml"
         );
 
         //Music music = context.getBean("musicBean",Music.class);
@@ -25,12 +25,14 @@ public class TestSpring {
 //        RockMusic rockMusic2 = context.getBean("musicBean1",RockMusic.class);
 //        System.out.println(rockMusic2.getSong());
 
-        Music music = context.getBean("rapMusic",Music.class);
-        MusicPlayer musicPlayer = new MusicPlayer(music);
+//        Music music = context.getBean("rapMusic",Music.class);
+//        MusicPlayer musicPlayer = new MusicPlayer(music);
+//        musicPlayer.playMusic();
+//        Music music2 = context.getBean("rockMusic",Music.class);
+//        MusicPlayer musicPlayer2 = new MusicPlayer(music2);
+//        musicPlayer2.playMusic();
+        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
         musicPlayer.playMusic();
-        Music music2 = context.getBean("rockMusic",Music.class);
-        MusicPlayer musicPlayer2 = new MusicPlayer(music2);
-        musicPlayer2.playMusic();
         context.close();
     }
 }
