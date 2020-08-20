@@ -9,31 +9,33 @@
     <context:property-placeholder location="classpath:musicPalyer.properties"/>
 
     <bean id="musicBean1"
-          class="com.turchyn.spring.RockMusic">
+          class="com.turchyn.spring.RockMusic"
+          init-method="myInit"
+          destroy-method="myDestroy">
     </bean>
-    <bean id="musicBean2"
-          class="com.turchyn.spring.ClassicalMusic">
-    </bean>
-    <bean id="musicBean3"
-          class="com.turchyn.spring.RapMusic">
-    </bean>
+<!--    <bean id="musicBean2"-->
+<!--          class="com.turchyn.spring.ClassicalMusic">-->
+<!--    </bean>-->
+<!--    <bean id="musicBean3"-->
+<!--          class="com.turchyn.spring.RapMusic">-->
+<!--    </bean>-->
 
-    <bean id="musicList"
-          class="com.turchyn.spring.MusicPlayer">
-        <property name="musicList">
-                <list>
-                    <ref bean = "musicBean1"></ref>
-                    <ref bean = "musicBean2"></ref>
-                    <ref bean = "musicBean3"></ref>
-                </list>
-        </property>
-    </bean>
+<!--    <bean id="musicList"-->
+<!--          class="com.turchyn.spring.MusicPlayer">-->
+<!--        <property name="musicList">-->
+<!--                <list>-->
+<!--                    <ref bean = "musicBean1"></ref>-->
+<!--                    <ref bean = "musicBean2"></ref>-->
+<!--                    <ref bean = "musicBean3"></ref>-->
+<!--                </list>-->
+<!--        </property>-->
+<!--    </bean>-->
 
-    <bean id="musicPlayer"
-          class="com.turchyn.spring.MusicPlayer">
-        <property name="music" ref="musicBean1"/>
-        <property name="name" value="${musicPlayer.name}"/>
-        <property name="volume" value="${musicPlayer.volume}"/>
-    </bean>
+<!--    <bean id="musicPlayer"-->
+<!--          class="com.turchyn.spring.MusicPlayer">-->
+<!--        <property name="music" ref="musicBean1"/>-->
+<!--        <property name="name" value="${musicPlayer.name}"/>-->
+<!--        <property name="volume" value="${musicPlayer.volume}"/>-->
+<!--    </bean>-->
 
 </beans>
