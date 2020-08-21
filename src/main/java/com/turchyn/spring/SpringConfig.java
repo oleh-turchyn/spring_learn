@@ -5,6 +5,9 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
+import java.util.Arrays;
+import java.util.List;
+
 @Configuration
 @ComponentScan("com.turchyn.spring")
 @PropertySource("classpath:musicPalyer.properties")
@@ -17,8 +20,17 @@ public class SpringConfig {
     public ClassicalMusic classicalMusic(){
         return new ClassicalMusic();
     }
+
+    @Bean
+    public RapMusic rapMusic(){
+        return new RapMusic();
+    }
+    @Bean
+    public List<Music> musicList(){
+        return Arrays.asList(rockMusic(),classicalMusic(),rapMusic());
+    }
     @Bean
     public MusicPlayer musicPlayer(){
-        return new MusicPlayer(rockMusic(),classicalMusic());
+        return new MusicPlayer(musicList());
     }
 }

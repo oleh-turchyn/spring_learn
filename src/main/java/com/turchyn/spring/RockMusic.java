@@ -7,17 +7,10 @@ import java.util.List;
 
 //@Component
 public class RockMusic implements Music {
-    private List<String> songs = new ArrayList<>();
-
-    {
-        songs.add("Loosing my mind");
-        songs.add("Unforgiven II");
-        songs.add("Holy Diver");
-    }
 
     @Override
-    public List<String> getSongs() {
-        return songs;
+    public String getSong() {
+        return "Loosing my mind";
     }
 
 }
