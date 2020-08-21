@@ -31,10 +31,10 @@ public class TestSpring {
 //        Music music2 = context.getBean("rockMusic",Music.class);
 //        MusicPlayer musicPlayer2 = new MusicPlayer(music2);
 //        musicPlayer2.playMusic();
-//        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
-//        musicPlayer.playMusic();
-        Computer computer = context.getBean("computer", Computer.class);
-        System.out.println(computer);
+        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+        System.out.println(musicPlayer.playMusic());
+        musicPlayer.playMusic2(MusicGenre.ROCK);
+        musicPlayer.playMusic2(MusicGenre.CLASSICAL);
         context.close();
     }
 }

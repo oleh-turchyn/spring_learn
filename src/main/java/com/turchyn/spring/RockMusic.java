@@ -2,17 +2,22 @@ package com.turchyn.spring;
 
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Component
 public class RockMusic implements Music {
-    public void myInit(){
-        System.out.println("doing my init");
+    private List<String> songs = new ArrayList<>();
+
+    {
+        songs.add("Loosing my mind");
+        songs.add("Unforgiven II");
+        songs.add("Holy Diver");
     }
 
-    public void myDestroy(){
-        System.out.println("doing my destroy");
-    }
     @Override
-    public String getSong() {
-        return "Loosing my Mind";
+    public List<String> getSongs() {
+        return songs;
     }
+
 }
