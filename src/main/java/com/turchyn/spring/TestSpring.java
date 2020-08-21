@@ -35,6 +35,10 @@ public class TestSpring {
         System.out.println(musicPlayer.playMusic());
         musicPlayer.playMusic2(MusicGenre.ROCK);
         musicPlayer.playMusic2(MusicGenre.CLASSICAL);
+
+        System.out.println(musicPlayer.getName());
+        System.out.println(musicPlayer.getVolume());
+
         context.close();
     }
 }
